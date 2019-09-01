@@ -11,6 +11,12 @@
 |
 */
 
+Route::prefix('api')->group(function(){
+    Route::get('users', 'UserController@index');
+    Route::get('investiments', 'InvestmentsController@index');
+    Route::get('investments-users', 'InvestmentsUsersController@index'); // passar id via request
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
