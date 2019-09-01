@@ -4,7 +4,6 @@
 
 Route::prefix('api')->group(function(){
     // users
-    Route::middleware(['cors'])->group(function(){
         Route::get('users', 'UserController@index');
         // investments
         Route::get('investments', 'InvestmentsController@index');
@@ -12,5 +11,4 @@ Route::prefix('api')->group(function(){
         Route::post('investments-users-store', 'InvestmentsUsersController@store');
         // rentability
         Route::get('profitability-user/{id}', 'ProfitabilityUserController@index'); // passar id via request
-    });
 });
