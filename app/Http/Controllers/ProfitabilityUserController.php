@@ -10,8 +10,9 @@ class ProfitabilityUserController extends Controller
         //
     }
 
-    public function index(){
-        $profitability_user = DB::table('table_user_profitability')->where('id_users', 1)->get();
+    public function index($id){
+
+        $profitability_user = DB::table('table_user_profitability')->where('id_users', 1)->where('id_investimento', $id)->get();
 
         if(count($profitability_user) > 0){
             return response()->json(
