@@ -19,7 +19,6 @@ class VerifyCsrfToken extends Middleware
      * @var array
      */
     protected $except = [
-        'https://bgreen-anbima.herokuapp.com',
-        'https://bgreen-anbima-api.herokuapp.com/api/investments-users-store',
+        'http://bgreen-anbima-api.herokuapp.com/api/',
     ];
 }
