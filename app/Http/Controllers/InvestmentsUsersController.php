@@ -14,17 +14,28 @@ class InvestmentsUsersController extends Controller
 
         $response = $request->json()->all();
 
-        dd($response['id2']);
+        $id_user = $response['id_users'];
+        $type_investment = $response['tipo_investimento'];
+        $value_estimated = $response['valor_investido'];
+        $previsao = $response['previsao'];
 
-        // requests
-        /* $id_user = $id;
-        $type_investment = $idinvestment;
 
         $store = DB::table('table_user_investments')->insert([
             'id_users' => $id_user,
             'tipo_investimento' => $type_investment,
-            'valor_investido' => $value
-        ]); */
+            'valor_investido' => $value_estimated,
+            'previsao' => now()
+        ]);
+
+        if($store){
+            return response()->json(1);
+        }
+
+        return response()->json([
+            'response' => 'Erro ao atualizar dados'
+        ]);
+
+
     }
 
     public function index(){
