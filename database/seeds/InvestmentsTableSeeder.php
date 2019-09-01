@@ -11,9 +11,9 @@ class InvestmentsTableSeeder extends Seeder
      */
     public function run()
     {
-        for($i=0; $i < 10; $i+=1){
+        for($i=0; $i < 4; $i+=1){
             DB::table('table_investments')->insert([
-                'name' => Str::random(10),
+                'name' => "Fundos " . $i,
                 'description' => Str::random(30),
                 'rentability' => '2,20%',
                 'taxa_admin' => '46,37%',
