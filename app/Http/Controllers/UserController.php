@@ -16,7 +16,6 @@ class UserController extends Controller
     public function index(){
         $users = DB::table('users')->get();
 
-
         if(count($users) > 0) {
             return response()->json(
                 $users
@@ -26,6 +25,5 @@ class UserController extends Controller
         return response()->json([
             'result' => 'Nenhum usuário localizado'
         ]);
-
     }
 }
