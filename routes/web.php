@@ -11,6 +11,6 @@ Route::prefix('api')->group(function(){
         Route::get('investments-users', 'InvestmentsUsersController@index'); // passar id via request
         Route::post('investments-users-store', 'InvestmentsUsersController@store');
         // rentability
-        Route::get('profitability-user', 'ProfitabilityUserController@index'); // passar id via request
+        Route::get('profitability-user/{id}', 'ProfitabilityUserController@index'); // passar id via request
     });
 });
