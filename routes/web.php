@@ -7,7 +7,7 @@ Route::prefix('api')->group(function(){
     Route::middleware(['cors'])->group(function(){
         Route::get('users', 'UserController@index');
         // investments
-        Route::get('investiments', 'InvestmentsController@index');
+        Route::get('investments', 'InvestmentsController@index');
         Route::get('investments-users', 'InvestmentsUsersController@index'); // passar id via request
         Route::post('investments-users-store', 'InvestmentsUsersController@store');
         // rentability
