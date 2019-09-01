@@ -10,6 +10,23 @@ class InvestmentsUsersController extends Controller
         //
     }
 
+    public function store(Request $request){
+
+        $response = $request->json()->all();
+
+        dd($response['id2']);
+
+        // requests
+        /* $id_user = $id;
+        $type_investment = $idinvestment;
+
+        $store = DB::table('table_user_investments')->insert([
+            'id_users' => $id_user,
+            'tipo_investimento' => $type_investment,
+            'valor_investido' => $value
+        ]); */
+    }
+
     public function index(){
         $user_investments = DB::table('table_user_investments')->where('id_users', 1)->get();
 
