@@ -16,6 +16,8 @@ class CreateTableInvestments extends Migration
         Schema::create('table_investments', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
+            $table->string('rentability');
+            $table->string('taxa_admin');
             $table->longText('description');
             $table->float('pl', 12, 2);
             $table->float('valcota', 12, 2);

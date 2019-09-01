@@ -15,13 +15,15 @@ class InvestmentsTableSeeder extends Seeder
             DB::table('table_investments')->insert([
                 'name' => Str::random(10),
                 'description' => Str::random(30),
-                'pl' => 12321544.12,
-                'valcota' => 12321544.12,
-                'cotas_emitidas' =>  12321544.12,
-                'cotas_reg_cliente' => 12321544.12,
-                'cotas_resg_ir' => 12321544.12,
+                'rentability' => '2,20%',
+                'taxa_admin' => '46,37%',
+                'pl' => 12345,
+                'valcota' => 12345,
+                'cotas_emitidas' =>  12345,
+                'cotas_reg_cliente' => 12345,
+                'cotas_resg_ir' => 12345,
                 'num_cotistas' => 200000,
-                'valor_aplicado_em_cotas' => 12321544.12,
+                'valor_aplicado_em_cotas' => 12345,
             ]);
         }
     }

@@ -39,16 +39,18 @@ class InvestmentsUsersController extends Controller
     }
 
     public function index(){
-        $user_investments = DB::table('table_user_investments')->where('id_users', 1)->get();
+        $user_investments = DB::table('table_user_investments')->join('table_investments','table_user_investments.tipo_investimento', '=', 'table_investments.id')->select('table_user_investments.*', 'table_investments.name', 'table_investments.description', 'table_investments.taxa_admin', 'table_investments.rentability')->where('id_users', 1)->get();
 
-        if(count($user_investments) > 0){
+        dd($user_investments);
+
+         if(count($user_investments) > 0){
             return response()->json(
                 $user_investments
             );
         }
 
         return response()->json([
-            'response' => 'Este usuário não possui investimentos'
+            'response' => 'Nenhum dado encontrado'
         ]);
     }
 }

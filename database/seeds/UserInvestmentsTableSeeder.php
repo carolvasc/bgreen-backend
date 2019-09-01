@@ -14,7 +14,7 @@ class UserInvestmentsTableSeeder extends Seeder
         for($i=0; $i < 3; $i+=1){
             DB::table('table_user_investments')->insert([
                 'id_users' => 1,
-                'tipo_investimento' => 2,
+                'tipo_investimento' => $i+1,
                 'valor_investido' => 650.00,
                 'previsao' => now()
             ]);
